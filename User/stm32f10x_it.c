@@ -42,7 +42,9 @@ extern uint8_t    uart_wait_ack_time;
 // status report
 extern uint16_t   check_status_time;
 extern uint16_t   report_status_idle_time;
-extern uint16_t   decrease_value_time;
+
+// buz_prototol
+extern uint16_t    timer;
 
 /** @addtogroup Template_Project
  * @{
@@ -232,7 +234,7 @@ void TIM3_IRQHandler(void)
         uart_wait_ack_time ++;
         check_status_time ++;
         report_status_idle_time ++;
-        decrease_value_time ++;
+        timer ++;
 
         key_press = Get_Key();  
         switch(key_state)

@@ -76,16 +76,17 @@ Section Cross References
     uart.o(.text) refers to uart.o(.data) for uart_buf_index
     uart.o(.text) refers to uart.o(.bss) for uart_buf
     key_1.o(.text) refers to hal_rgb_led.o(.text) for LED_RGB_Control
-    key_1.o(.text) refers to gen_protocol.o(.text) for SendSetModuleWorkMode
-    key_1.o(.text) refers to buz_protocol.o(.text) for IncreaseGValue
+    key_1.o(.text) refers to gen_protocol.o(.text) for SendResetModule
     key_1.o(.text) refers to key_1.o(.data) for key_return
     key_1.o(.text) refers to uart.o(.data) for uart_msg_sn
-    infrared.o(.text) refers to buz_protocol.o(.text) for IncreaseGValue
+    key_1.o(.text) refers to buz_protocol.o(.data) for g_val
+    infrared.o(.text) refers to buz_protocol.o(.data) for g_val
     buz_protocol.o(.text) refers to gen_protocol.o(.text) for ExchangeBytes
-    buz_protocol.o(.text) refers to hal_motor.o(.text) for Motor_Control
+    buz_protocol.o(.text) refers to rt_memcpy_v6.o(.text) for __aeabi_memcpy
     buz_protocol.o(.text) refers to hal_rgb_led.o(.text) for LED_RGB_Control
+    buz_protocol.o(.text) refers to hal_motor.o(.text) for Motor_Control
     buz_protocol.o(.text) refers to delay.o(.text) for delay_ms
-    buz_protocol.o(.text) refers to buz_protocol.o(.data) for gvalue_honey
+    buz_protocol.o(.text) refers to buz_protocol.o(.data) for g_val
     buz_protocol.o(.text) refers to buz_protocol.o(.bss) for m_protocol_write_ack
     buz_protocol.o(.text) refers to uart.o(.data) for uart_msg_sn
     gen_protocol.o(.text) refers to rt_memclr.o(.text) for __aeabi_memclr
@@ -347,33 +348,33 @@ Image Symbol Table
     TI1_Config                               0x0800140f   Thumb Code   108  stm32f10x_tim.o(.text)
     .text                                    0x08001bc8   Section        0  stm32f10x_exti.o(.text)
     .text                                    0x08001ce4   Section        0  main.o(.text)
-    .text                                    0x08001d2c   Section        0  stm32f10x_it.o(.text)
-    .text                                    0x08001f6c   Section        0  system_stm32f10x.o(.text)
-    SetSysClockTo72                          0x08001f6d   Thumb Code   214  system_stm32f10x.o(.text)
-    SetSysClock                              0x08002043   Thumb Code     8  system_stm32f10x.o(.text)
-    .text                                    0x0800214c   Section        0  delay.o(.text)
-    .text                                    0x08002220   Section        0  hal_uart.o(.text)
-    .text                                    0x08002330   Section        0  hal_temp_hum.o(.text)
-    .text                                    0x080024d0   Section        0  hal_infrared.o(.text)
-    .text                                    0x08002558   Section        0  sa_gpio.o(.text)
-    .text                                    0x08002604   Section        0  hal_motor.o(.text)
-    .text                                    0x08002814   Section        0  hal_rgb_led.o(.text)
-    .text                                    0x0800293c   Section        0  hal_key.o(.text)
-    .text                                    0x08002a3c   Section        0  uart.o(.text)
-    .text                                    0x08002b18   Section        0  key_1.o(.text)
-    .text                                    0x08002b90   Section        0  infrared.o(.text)
-    .text                                    0x08002b9c   Section        0  buz_protocol.o(.text)
-    .text                                    0x08002f30   Section        0  gen_protocol.o(.text)
-    .text                                    0x08003328   Section        2  use_no_semi_2.o(.text)
-    .text                                    0x0800332a   Section      138  rt_memcpy_v6.o(.text)
-    .text                                    0x080033b4   Section       68  rt_memclr.o(.text)
-    .text                                    0x080033f8   Section        0  heapauxi.o(.text)
-    .text                                    0x080033fe   Section        2  use_no_semi.o(.text)
-    .text                                    0x08003400   Section      100  rt_memcpy_w.o(.text)
-    .text                                    0x08003464   Section       78  rt_memclr_w.o(.text)
-    .text                                    0x080034b2   Section       74  sys_stackheap_outer.o(.text)
-    .text                                    0x080034fc   Section        0  exit.o(.text)
-    .text                                    0x08003508   Section        8  libspace.o(.text)
+    .text                                    0x08001d28   Section        0  stm32f10x_it.o(.text)
+    .text                                    0x08001f68   Section        0  system_stm32f10x.o(.text)
+    SetSysClockTo72                          0x08001f69   Thumb Code   214  system_stm32f10x.o(.text)
+    SetSysClock                              0x0800203f   Thumb Code     8  system_stm32f10x.o(.text)
+    .text                                    0x08002148   Section        0  delay.o(.text)
+    .text                                    0x0800221c   Section        0  hal_uart.o(.text)
+    .text                                    0x0800232c   Section        0  hal_temp_hum.o(.text)
+    .text                                    0x080024cc   Section        0  hal_infrared.o(.text)
+    .text                                    0x08002554   Section        0  sa_gpio.o(.text)
+    .text                                    0x08002600   Section        0  hal_motor.o(.text)
+    .text                                    0x08002810   Section        0  hal_rgb_led.o(.text)
+    .text                                    0x08002938   Section        0  hal_key.o(.text)
+    .text                                    0x08002a38   Section        0  uart.o(.text)
+    .text                                    0x08002b14   Section        0  key_1.o(.text)
+    .text                                    0x08002bf8   Section        0  infrared.o(.text)
+    .text                                    0x08002c18   Section        0  buz_protocol.o(.text)
+    .text                                    0x08002f40   Section        0  gen_protocol.o(.text)
+    .text                                    0x08003338   Section        2  use_no_semi_2.o(.text)
+    .text                                    0x0800333a   Section      138  rt_memcpy_v6.o(.text)
+    .text                                    0x080033c4   Section       68  rt_memclr.o(.text)
+    .text                                    0x08003408   Section        0  heapauxi.o(.text)
+    .text                                    0x0800340e   Section        2  use_no_semi.o(.text)
+    .text                                    0x08003410   Section      100  rt_memcpy_w.o(.text)
+    .text                                    0x08003474   Section       78  rt_memclr_w.o(.text)
+    .text                                    0x080034c2   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x0800350c   Section        0  exit.o(.text)
+    .text                                    0x08003518   Section        8  libspace.o(.text)
     .data                                    0x20000000   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000000   Data          16  stm32f10x_rcc.o(.data)
     ADCPrescTable                            0x20000010   Data           4  stm32f10x_rcc.o(.data)
@@ -387,16 +388,16 @@ Image Symbol Table
     fac_ms                                   0x2000002e   Data           2  delay.o(.data)
     .data                                    0x20000030   Section        7  uart.o(.data)
     .data                                    0x20000038   Section        2  key_1.o(.data)
-    .data                                    0x2000003a   Section       10  buz_protocol.o(.data)
+    .data                                    0x2000003a   Section        8  buz_protocol.o(.data)
     .bss                                     0x20000044   Section      256  uart.o(.bss)
-    .bss                                     0x20000144   Section       42  buz_protocol.o(.bss)
-    .bss                                     0x2000016e   Section      131  gen_protocol.o(.bss)
-    .bss                                     0x200001f4   Section       96  libspace.o(.bss)
-    HEAP                                     0x20000258   Section      512  startup_stm32f10x_md.o(HEAP)
-    Heap_Mem                                 0x20000258   Data         512  startup_stm32f10x_md.o(HEAP)
-    STACK                                    0x20000458   Section     1024  startup_stm32f10x_md.o(STACK)
-    Stack_Mem                                0x20000458   Data        1024  startup_stm32f10x_md.o(STACK)
-    __initial_sp                             0x20000858   Data           0  startup_stm32f10x_md.o(STACK)
+    .bss                                     0x20000144   Section       56  buz_protocol.o(.bss)
+    .bss                                     0x2000017c   Section      131  gen_protocol.o(.bss)
+    .bss                                     0x20000200   Section       96  libspace.o(.bss)
+    HEAP                                     0x20000260   Section      512  startup_stm32f10x_md.o(HEAP)
+    Heap_Mem                                 0x20000260   Data         512  startup_stm32f10x_md.o(HEAP)
+    STACK                                    0x20000460   Section     1024  startup_stm32f10x_md.o(STACK)
+    Stack_Mem                                0x20000460   Data        1024  startup_stm32f10x_md.o(STACK)
+    __initial_sp                             0x20000860   Data           0  startup_stm32f10x_md.o(STACK)
 
     Global Symbols
 
@@ -702,113 +703,110 @@ Image Symbol Table
     EXTI_ClearFlag                           0x08001ca9   Thumb Code     8  stm32f10x_exti.o(.text)
     EXTI_GetITStatus                         0x08001cb1   Thumb Code    34  stm32f10x_exti.o(.text)
     EXTI_ClearITPendingBit                   0x08001cd3   Thumb Code     8  stm32f10x_exti.o(.text)
-    main                                     0x08001ce5   Thumb Code    70  main.o(.text)
-    NMI_Handler                              0x08001d2d   Thumb Code     2  stm32f10x_it.o(.text)
-    HardFault_Handler                        0x08001d2f   Thumb Code     4  stm32f10x_it.o(.text)
-    MemManage_Handler                        0x08001d33   Thumb Code     4  stm32f10x_it.o(.text)
-    BusFault_Handler                         0x08001d37   Thumb Code     4  stm32f10x_it.o(.text)
-    UsageFault_Handler                       0x08001d3b   Thumb Code     4  stm32f10x_it.o(.text)
-    SVC_Handler                              0x08001d3f   Thumb Code     2  stm32f10x_it.o(.text)
-    DebugMon_Handler                         0x08001d41   Thumb Code     2  stm32f10x_it.o(.text)
-    PendSV_Handler                           0x08001d43   Thumb Code     2  stm32f10x_it.o(.text)
-    SysTick_Handler                          0x08001d45   Thumb Code     2  stm32f10x_it.o(.text)
-    USART1_IRQHandler                        0x08001d47   Thumb Code   200  stm32f10x_it.o(.text)
-    TIM3_IRQHandler                          0x08001e0f   Thumb Code   210  stm32f10x_it.o(.text)
-    EXTI15_10_IRQHandler                     0x08001ee1   Thumb Code    76  stm32f10x_it.o(.text)
-    SystemInit                               0x0800204b   Thumb Code    78  system_stm32f10x.o(.text)
-    SystemCoreClockUpdate                    0x08002099   Thumb Code   142  system_stm32f10x.o(.text)
-    delay_init                               0x0800214d   Thumb Code    50  delay.o(.text)
-    delay_us                                 0x0800217f   Thumb Code    72  delay.o(.text)
-    delay_ms                                 0x080021c7   Thumb Code    72  delay.o(.text)
-    RCC_Configuration                        0x08002221   Thumb Code    20  hal_uart.o(.text)
-    UART_GPIO_Configuration                  0x08002235   Thumb Code    52  hal_uart.o(.text)
-    NVIC_Configuration                       0x08002269   Thumb Code    50  hal_uart.o(.text)
-    UART_Configuration                       0x0800229b   Thumb Code    74  hal_uart.o(.text)
-    UART1_Send_DATA                          0x080022e5   Thumb Code    28  hal_uart.o(.text)
-    _sys_exit                                0x08002301   Thumb Code     6  hal_uart.o(.text)
-    fputc                                    0x08002307   Thumb Code    32  hal_uart.o(.text)
-    DHT11_Rst                                0x08002331   Thumb Code    56  hal_temp_hum.o(.text)
-    DHT11_Check                              0x08002369   Thumb Code   100  hal_temp_hum.o(.text)
-    DHT11_Read_Bit                           0x080023cd   Thumb Code    76  hal_temp_hum.o(.text)
-    DHT11_Read_Byte                          0x08002419   Thumb Code    30  hal_temp_hum.o(.text)
-    DHT11_Read_Data                          0x08002437   Thumb Code    88  hal_temp_hum.o(.text)
-    DHT11_Init                               0x0800248f   Thumb Code    54  hal_temp_hum.o(.text)
-    IR_GPIO_Init                             0x080024d1   Thumb Code    40  hal_infrared.o(.text)
-    IR_EXTI_Init                             0x080024f9   Thumb Code    80  hal_infrared.o(.text)
-    IR_Init                                  0x08002549   Thumb Code    12  hal_infrared.o(.text)
-    SA_GPIO_Init                             0x08002559   Thumb Code   142  sa_gpio.o(.text)
-    SA_TIMER_Init                            0x08002605   Thumb Code    62  hal_motor.o(.text)
-    SA_TIMER_PWM_Init                        0x08002643   Thumb Code   112  hal_motor.o(.text)
-    SA_TIMER_PWMOUT_Init                     0x080026b3   Thumb Code   182  hal_motor.o(.text)
-    Motor_Init                               0x08002769   Thumb Code    68  hal_motor.o(.text)
-    Motor_Control                            0x080027ad   Thumb Code    46  hal_motor.o(.text)
-    TIM4_IRQHandler                          0x080027db   Thumb Code    22  hal_motor.o(.text)
-    LED_delay                                0x08002815   Thumb Code    24  hal_rgb_led.o(.text)
-    ClkProduce                               0x0800282d   Thumb Code    32  hal_rgb_led.o(.text)
-    Send32Zero                               0x0800284d   Thumb Code    28  hal_rgb_led.o(.text)
-    TakeAntiCode                             0x08002869   Thumb Code    12  hal_rgb_led.o(.text)
-    DatSend                                  0x08002875   Thumb Code    48  hal_rgb_led.o(.text)
-    DataDealWithAndSend                      0x080028a5   Thumb Code    66  hal_rgb_led.o(.text)
-    LED_RGB_Control                          0x080028e7   Thumb Code    34  hal_rgb_led.o(.text)
-    RGB_LED_Init                             0x08002909   Thumb Code    48  hal_rgb_led.o(.text)
-    KEY_GPIO_Init                            0x0800293d   Thumb Code    88  hal_key.o(.text)
-    TIM3_Int_Init                            0x08002995   Thumb Code    90  hal_key.o(.text)
-    Get_Key                                  0x080029ef   Thumb Code    70  hal_key.o(.text)
-    UartInit                                 0x08002a3d   Thumb Code    20  uart.o(.text)
-    HandleMsg                                0x08002a51   Thumb Code   184  uart.o(.text)
-    HandleKey                                0x08002b19   Thumb Code   110  key_1.o(.text)
-    HandleIREvent                            0x08002b91   Thumb Code    12  infrared.o(.text)
-    BuzProtocolInit                          0x08002b9d   Thumb Code    88  buz_protocol.o(.text)
-    ReportStatus                             0x08002bf5   Thumb Code   124  buz_protocol.o(.text)
-    HandleModuleStatus                       0x08002c71   Thumb Code     2  buz_protocol.o(.text)
-    HandleControl                            0x08002c73   Thumb Code    78  buz_protocol.o(.text)
-    HandleQueryStatus                        0x08002cc1   Thumb Code    28  buz_protocol.o(.text)
-    HandleBuzCmd                             0x08002cdd   Thumb Code    48  buz_protocol.o(.text)
-    High                                     0x08002d0d   Thumb Code    56  buz_protocol.o(.text)
-    UploadStatus                             0x08002d45   Thumb Code    44  buz_protocol.o(.text)
-    Display                                  0x08002d71   Thumb Code   166  buz_protocol.o(.text)
-    IncreaseGValue                           0x08002e17   Thumb Code    20  buz_protocol.o(.text)
-    DecreaseGValue                           0x08002e2b   Thumb Code   202  buz_protocol.o(.text)
-    BuzTick                                  0x08002ef5   Thumb Code    16  buz_protocol.o(.text)
-    ExchangeBytes                            0x08002f31   Thumb Code    22  gen_protocol.o(.text)
-    GenProtocolInit                          0x08002f47   Thumb Code   290  gen_protocol.o(.text)
-    CheckSum                                 0x08003069   Thumb Code    40  gen_protocol.o(.text)
-    SendToUart                               0x08003091   Thumb Code   274  gen_protocol.o(.text)
-    SendErrorAck                             0x080031a3   Thumb Code    34  gen_protocol.o(.text)
-    SendGetMcuInfoAck                        0x080031c5   Thumb Code    32  gen_protocol.o(.text)
-    SendHeartbeatAck                         0x080031e5   Thumb Code    30  gen_protocol.o(.text)
-    SendReportModuleStatusAck                0x08003203   Thumb Code    30  gen_protocol.o(.text)
-    SendRebootMcuAck                         0x08003221   Thumb Code    30  gen_protocol.o(.text)
-    SendResetModule                          0x0800323f   Thumb Code    30  gen_protocol.o(.text)
-    SendSetModuleWorkMode                    0x0800325d   Thumb Code    34  gen_protocol.o(.text)
-    HandleRebootMcu                          0x0800327f   Thumb Code    38  gen_protocol.o(.text)
-    __use_no_semihosting                     0x08003329   Thumb Code     2  use_no_semi_2.o(.text)
-    __aeabi_memcpy                           0x0800332b   Thumb Code     0  rt_memcpy_v6.o(.text)
-    __rt_memcpy                              0x0800332b   Thumb Code   138  rt_memcpy_v6.o(.text)
-    _memcpy_lastbytes                        0x08003391   Thumb Code     0  rt_memcpy_v6.o(.text)
-    __aeabi_memclr                           0x080033b5   Thumb Code     0  rt_memclr.o(.text)
-    __rt_memclr                              0x080033b5   Thumb Code    68  rt_memclr.o(.text)
-    _memset                                  0x080033b9   Thumb Code     0  rt_memclr.o(.text)
-    __use_two_region_memory                  0x080033f9   Thumb Code     2  heapauxi.o(.text)
-    __rt_heap_escrow$2region                 0x080033fb   Thumb Code     2  heapauxi.o(.text)
-    __rt_heap_expand$2region                 0x080033fd   Thumb Code     2  heapauxi.o(.text)
-    __I$use$semihosting                      0x080033ff   Thumb Code     0  use_no_semi.o(.text)
-    __use_no_semihosting_swi                 0x080033ff   Thumb Code     2  use_no_semi.o(.text)
-    __aeabi_memcpy4                          0x08003401   Thumb Code     0  rt_memcpy_w.o(.text)
-    __aeabi_memcpy8                          0x08003401   Thumb Code     0  rt_memcpy_w.o(.text)
-    __rt_memcpy_w                            0x08003401   Thumb Code   100  rt_memcpy_w.o(.text)
-    _memcpy_lastbytes_aligned                0x08003449   Thumb Code     0  rt_memcpy_w.o(.text)
-    __aeabi_memclr4                          0x08003465   Thumb Code     0  rt_memclr_w.o(.text)
-    __aeabi_memclr8                          0x08003465   Thumb Code     0  rt_memclr_w.o(.text)
-    __rt_memclr_w                            0x08003465   Thumb Code    78  rt_memclr_w.o(.text)
-    _memset_w                                0x08003469   Thumb Code     0  rt_memclr_w.o(.text)
-    __user_setup_stackheap                   0x080034b3   Thumb Code    74  sys_stackheap_outer.o(.text)
-    exit                                     0x080034fd   Thumb Code    12  exit.o(.text)
-    __user_libspace                          0x08003509   Thumb Code     8  libspace.o(.text)
-    __user_perproc_libspace                  0x08003509   Thumb Code     0  libspace.o(.text)
-    __user_perthread_libspace                0x08003509   Thumb Code     0  libspace.o(.text)
-    Region$$Table$$Base                      0x08003510   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08003530   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08001ce5   Thumb Code    66  main.o(.text)
+    NMI_Handler                              0x08001d29   Thumb Code     2  stm32f10x_it.o(.text)
+    HardFault_Handler                        0x08001d2b   Thumb Code     4  stm32f10x_it.o(.text)
+    MemManage_Handler                        0x08001d2f   Thumb Code     4  stm32f10x_it.o(.text)
+    BusFault_Handler                         0x08001d33   Thumb Code     4  stm32f10x_it.o(.text)
+    UsageFault_Handler                       0x08001d37   Thumb Code     4  stm32f10x_it.o(.text)
+    SVC_Handler                              0x08001d3b   Thumb Code     2  stm32f10x_it.o(.text)
+    DebugMon_Handler                         0x08001d3d   Thumb Code     2  stm32f10x_it.o(.text)
+    PendSV_Handler                           0x08001d3f   Thumb Code     2  stm32f10x_it.o(.text)
+    SysTick_Handler                          0x08001d41   Thumb Code     2  stm32f10x_it.o(.text)
+    USART1_IRQHandler                        0x08001d43   Thumb Code   200  stm32f10x_it.o(.text)
+    TIM3_IRQHandler                          0x08001e0b   Thumb Code   210  stm32f10x_it.o(.text)
+    EXTI15_10_IRQHandler                     0x08001edd   Thumb Code    76  stm32f10x_it.o(.text)
+    SystemInit                               0x08002047   Thumb Code    78  system_stm32f10x.o(.text)
+    SystemCoreClockUpdate                    0x08002095   Thumb Code   142  system_stm32f10x.o(.text)
+    delay_init                               0x08002149   Thumb Code    50  delay.o(.text)
+    delay_us                                 0x0800217b   Thumb Code    72  delay.o(.text)
+    delay_ms                                 0x080021c3   Thumb Code    72  delay.o(.text)
+    RCC_Configuration                        0x0800221d   Thumb Code    20  hal_uart.o(.text)
+    UART_GPIO_Configuration                  0x08002231   Thumb Code    52  hal_uart.o(.text)
+    NVIC_Configuration                       0x08002265   Thumb Code    50  hal_uart.o(.text)
+    UART_Configuration                       0x08002297   Thumb Code    74  hal_uart.o(.text)
+    UART1_Send_DATA                          0x080022e1   Thumb Code    28  hal_uart.o(.text)
+    _sys_exit                                0x080022fd   Thumb Code     6  hal_uart.o(.text)
+    fputc                                    0x08002303   Thumb Code    32  hal_uart.o(.text)
+    DHT11_Rst                                0x0800232d   Thumb Code    56  hal_temp_hum.o(.text)
+    DHT11_Check                              0x08002365   Thumb Code   100  hal_temp_hum.o(.text)
+    DHT11_Read_Bit                           0x080023c9   Thumb Code    76  hal_temp_hum.o(.text)
+    DHT11_Read_Byte                          0x08002415   Thumb Code    30  hal_temp_hum.o(.text)
+    DHT11_Read_Data                          0x08002433   Thumb Code    88  hal_temp_hum.o(.text)
+    DHT11_Init                               0x0800248b   Thumb Code    54  hal_temp_hum.o(.text)
+    IR_GPIO_Init                             0x080024cd   Thumb Code    40  hal_infrared.o(.text)
+    IR_EXTI_Init                             0x080024f5   Thumb Code    80  hal_infrared.o(.text)
+    IR_Init                                  0x08002545   Thumb Code    12  hal_infrared.o(.text)
+    SA_GPIO_Init                             0x08002555   Thumb Code   142  sa_gpio.o(.text)
+    SA_TIMER_Init                            0x08002601   Thumb Code    62  hal_motor.o(.text)
+    SA_TIMER_PWM_Init                        0x0800263f   Thumb Code   112  hal_motor.o(.text)
+    SA_TIMER_PWMOUT_Init                     0x080026af   Thumb Code   182  hal_motor.o(.text)
+    Motor_Init                               0x08002765   Thumb Code    68  hal_motor.o(.text)
+    Motor_Control                            0x080027a9   Thumb Code    46  hal_motor.o(.text)
+    TIM4_IRQHandler                          0x080027d7   Thumb Code    22  hal_motor.o(.text)
+    LED_delay                                0x08002811   Thumb Code    24  hal_rgb_led.o(.text)
+    ClkProduce                               0x08002829   Thumb Code    32  hal_rgb_led.o(.text)
+    Send32Zero                               0x08002849   Thumb Code    28  hal_rgb_led.o(.text)
+    TakeAntiCode                             0x08002865   Thumb Code    12  hal_rgb_led.o(.text)
+    DatSend                                  0x08002871   Thumb Code    48  hal_rgb_led.o(.text)
+    DataDealWithAndSend                      0x080028a1   Thumb Code    66  hal_rgb_led.o(.text)
+    LED_RGB_Control                          0x080028e3   Thumb Code    34  hal_rgb_led.o(.text)
+    RGB_LED_Init                             0x08002905   Thumb Code    48  hal_rgb_led.o(.text)
+    KEY_GPIO_Init                            0x08002939   Thumb Code    88  hal_key.o(.text)
+    TIM3_Int_Init                            0x08002991   Thumb Code    90  hal_key.o(.text)
+    Get_Key                                  0x080029eb   Thumb Code    70  hal_key.o(.text)
+    UartInit                                 0x08002a39   Thumb Code    20  uart.o(.text)
+    HandleMsg                                0x08002a4d   Thumb Code   184  uart.o(.text)
+    HandleKey                                0x08002b15   Thumb Code   214  key_1.o(.text)
+    HandleIREvent                            0x08002bf9   Thumb Code    26  infrared.o(.text)
+    BuzProtocolInit                          0x08002c19   Thumb Code    74  buz_protocol.o(.text)
+    ReportStatus                             0x08002c63   Thumb Code   120  buz_protocol.o(.text)
+    HandleModuleStatus                       0x08002cdb   Thumb Code     2  buz_protocol.o(.text)
+    HandleControl                            0x08002cdd   Thumb Code   168  buz_protocol.o(.text)
+    HandleQueryStatus                        0x08002d85   Thumb Code    28  buz_protocol.o(.text)
+    HandleBuzCmd                             0x08002da1   Thumb Code    48  buz_protocol.o(.text)
+    CheckStatus                              0x08002dd1   Thumb Code    86  buz_protocol.o(.text)
+    High                                     0x08002e27   Thumb Code    56  buz_protocol.o(.text)
+    UpdateStatus                             0x08002e5f   Thumb Code   186  buz_protocol.o(.text)
+    ExchangeBytes                            0x08002f41   Thumb Code    22  gen_protocol.o(.text)
+    GenProtocolInit                          0x08002f57   Thumb Code   290  gen_protocol.o(.text)
+    CheckSum                                 0x08003079   Thumb Code    40  gen_protocol.o(.text)
+    SendToUart                               0x080030a1   Thumb Code   274  gen_protocol.o(.text)
+    SendErrorAck                             0x080031b3   Thumb Code    34  gen_protocol.o(.text)
+    SendGetMcuInfoAck                        0x080031d5   Thumb Code    32  gen_protocol.o(.text)
+    SendHeartbeatAck                         0x080031f5   Thumb Code    30  gen_protocol.o(.text)
+    SendReportModuleStatusAck                0x08003213   Thumb Code    30  gen_protocol.o(.text)
+    SendRebootMcuAck                         0x08003231   Thumb Code    30  gen_protocol.o(.text)
+    SendResetModule                          0x0800324f   Thumb Code    30  gen_protocol.o(.text)
+    SendSetModuleWorkMode                    0x0800326d   Thumb Code    34  gen_protocol.o(.text)
+    HandleRebootMcu                          0x0800328f   Thumb Code    38  gen_protocol.o(.text)
+    __use_no_semihosting                     0x08003339   Thumb Code     2  use_no_semi_2.o(.text)
+    __aeabi_memcpy                           0x0800333b   Thumb Code     0  rt_memcpy_v6.o(.text)
+    __rt_memcpy                              0x0800333b   Thumb Code   138  rt_memcpy_v6.o(.text)
+    _memcpy_lastbytes                        0x080033a1   Thumb Code     0  rt_memcpy_v6.o(.text)
+    __aeabi_memclr                           0x080033c5   Thumb Code     0  rt_memclr.o(.text)
+    __rt_memclr                              0x080033c5   Thumb Code    68  rt_memclr.o(.text)
+    _memset                                  0x080033c9   Thumb Code     0  rt_memclr.o(.text)
+    __use_two_region_memory                  0x08003409   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x0800340b   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x0800340d   Thumb Code     2  heapauxi.o(.text)
+    __I$use$semihosting                      0x0800340f   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x0800340f   Thumb Code     2  use_no_semi.o(.text)
+    __aeabi_memcpy4                          0x08003411   Thumb Code     0  rt_memcpy_w.o(.text)
+    __aeabi_memcpy8                          0x08003411   Thumb Code     0  rt_memcpy_w.o(.text)
+    __rt_memcpy_w                            0x08003411   Thumb Code   100  rt_memcpy_w.o(.text)
+    _memcpy_lastbytes_aligned                0x08003459   Thumb Code     0  rt_memcpy_w.o(.text)
+    __aeabi_memclr4                          0x08003475   Thumb Code     0  rt_memclr_w.o(.text)
+    __aeabi_memclr8                          0x08003475   Thumb Code     0  rt_memclr_w.o(.text)
+    __rt_memclr_w                            0x08003475   Thumb Code    78  rt_memclr_w.o(.text)
+    _memset_w                                0x08003479   Thumb Code     0  rt_memclr_w.o(.text)
+    __user_setup_stackheap                   0x080034c3   Thumb Code    74  sys_stackheap_outer.o(.text)
+    exit                                     0x0800350d   Thumb Code    12  exit.o(.text)
+    __user_libspace                          0x08003519   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x08003519   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x08003519   Thumb Code     0  libspace.o(.text)
+    Region$$Table$$Base                      0x08003520   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08003540   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000018   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x2000001c   Data          16  system_stm32f10x.o(.data)
     uart_buf_index                           0x20000030   Data           2  uart.o(.data)
@@ -819,25 +817,23 @@ Image Symbol Table
     key_return                               0x20000038   Data           2  key_1.o(.data)
     check_status_time                        0x2000003a   Data           2  buz_protocol.o(.data)
     report_status_idle_time                  0x2000003c   Data           2  buz_protocol.o(.data)
-    decrease_value_time                      0x2000003e   Data           2  buz_protocol.o(.data)
-    gvalue_honey                             0x20000040   Data           1  buz_protocol.o(.data)
-    gvalue_honey_last                        0x20000041   Data           1  buz_protocol.o(.data)
-    gvalue_my                                0x20000042   Data           1  buz_protocol.o(.data)
-    high                                     0x20000043   Data           1  buz_protocol.o(.data)
+    g_val                                    0x2000003e   Data           1  buz_protocol.o(.data)
+    timer                                    0x20000040   Data           2  buz_protocol.o(.data)
     uart_buf                                 0x20000044   Data         256  uart.o(.bss)
-    m_protocol_write                         0x20000144   Data          12  buz_protocol.o(.bss)
-    m_protocol_write_ack                     0x20000150   Data           9  buz_protocol.o(.bss)
-    m_protocol_read                          0x20000159   Data          10  buz_protocol.o(.bss)
-    m_protocol_mcu_status                    0x20000163   Data          11  buz_protocol.o(.bss)
-    m_protocol_cmd_error                     0x2000016e   Data          10  gen_protocol.o(.bss)
-    m_protocol_get_mcu_info_ack              0x20000178   Data          75  gen_protocol.o(.bss)
-    m_protocol_heartbeat_ack                 0x200001c3   Data           9  gen_protocol.o(.bss)
-    m_protocol_report_module_status_ack      0x200001cc   Data           9  gen_protocol.o(.bss)
-    m_protocol_reboot_mcu_ack                0x200001d5   Data           9  gen_protocol.o(.bss)
-    m_protocol_reset_module                  0x200001de   Data           9  gen_protocol.o(.bss)
-    m_protocol_set_module_work_mode          0x200001e7   Data          10  gen_protocol.o(.bss)
-    __libspace_start                         0x200001f4   Data          96  libspace.o(.bss)
-    __temporary_stack_top$libspace           0x20000254   Data           0  libspace.o(.bss)
+    m_protocol_write                         0x20000144   Data          13  buz_protocol.o(.bss)
+    m_protocol_write_ack                     0x20000151   Data           9  buz_protocol.o(.bss)
+    m_protocol_read                          0x2000015a   Data          10  buz_protocol.o(.bss)
+    m_protocol_mcu_status_current            0x20000164   Data          12  buz_protocol.o(.bss)
+    m_protocol_mcu_status_last               0x20000170   Data          12  buz_protocol.o(.bss)
+    m_protocol_cmd_error                     0x2000017c   Data          10  gen_protocol.o(.bss)
+    m_protocol_get_mcu_info_ack              0x20000186   Data          75  gen_protocol.o(.bss)
+    m_protocol_heartbeat_ack                 0x200001d1   Data           9  gen_protocol.o(.bss)
+    m_protocol_report_module_status_ack      0x200001da   Data           9  gen_protocol.o(.bss)
+    m_protocol_reboot_mcu_ack                0x200001e3   Data           9  gen_protocol.o(.bss)
+    m_protocol_reset_module                  0x200001ec   Data           9  gen_protocol.o(.bss)
+    m_protocol_set_module_work_mode          0x200001f5   Data          10  gen_protocol.o(.bss)
+    __libspace_start                         0x20000200   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x20000260   Data           0  libspace.o(.bss)
 
 
 
@@ -847,9 +843,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003574, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003584, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00003530, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00003540, Max: 0x00010000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -908,37 +904,37 @@ Memory Map of the image
     0x08000dac   0x00000e1a   Code   RO          106    .text               stm32f10x_tim.o
     0x08001bc6   0x00000002   PAD
     0x08001bc8   0x0000011c   Code   RO          118    .text               stm32f10x_exti.o
-    0x08001ce4   0x00000046   Code   RO          130    .text               main.o
-    0x08001d2a   0x00000002   PAD
-    0x08001d2c   0x00000240   Code   RO          188    .text               stm32f10x_it.o
-    0x08001f6c   0x000001e0   Code   RO          208    .text               system_stm32f10x.o
-    0x0800214c   0x000000d4   Code   RO          226    .text               delay.o
-    0x08002220   0x00000110   Code   RO          243    .text               hal_uart.o
-    0x08002330   0x000001a0   Code   RO          262    .text               hal_temp_hum.o
-    0x080024d0   0x00000088   Code   RO          277    .text               hal_infrared.o
-    0x08002558   0x000000ac   Code   RO          289    .text               sa_gpio.o
-    0x08002604   0x00000210   Code   RO          301    .text               hal_motor.o
-    0x08002814   0x00000128   Code   RO          313    .text               hal_rgb_led.o
-    0x0800293c   0x00000100   Code   RO          325    .text               hal_key.o
-    0x08002a3c   0x000000dc   Code   RO          337    .text               uart.o
-    0x08002b18   0x00000078   Code   RO          353    .text               key_1.o
-    0x08002b90   0x0000000c   Code   RO          369    .text               infrared.o
-    0x08002b9c   0x00000394   Code   RO          382    .text               buz_protocol.o
-    0x08002f30   0x000003f8   Code   RO          399    .text               gen_protocol.o
-    0x08003328   0x00000002   Code   RO          421    .text               c_w.l(use_no_semi_2.o)
-    0x0800332a   0x0000008a   Code   RO          423    .text               c_w.l(rt_memcpy_v6.o)
-    0x080033b4   0x00000044   Code   RO          425    .text               c_w.l(rt_memclr.o)
-    0x080033f8   0x00000006   Code   RO          427    .text               c_w.l(heapauxi.o)
-    0x080033fe   0x00000002   Code   RO          431    .text               c_w.l(use_no_semi.o)
-    0x08003400   0x00000064   Code   RO          434    .text               c_w.l(rt_memcpy_w.o)
-    0x08003464   0x0000004e   Code   RO          436    .text               c_w.l(rt_memclr_w.o)
-    0x080034b2   0x0000004a   Code   RO          453    .text               c_w.l(sys_stackheap_outer.o)
-    0x080034fc   0x0000000c   Code   RO          455    .text               c_w.l(exit.o)
-    0x08003508   0x00000008   Code   RO          463    .text               c_w.l(libspace.o)
-    0x08003510   0x00000020   Data   RO          585    Region$$Table       anon$$obj.o
+    0x08001ce4   0x00000042   Code   RO          130    .text               main.o
+    0x08001d26   0x00000002   PAD
+    0x08001d28   0x00000240   Code   RO          188    .text               stm32f10x_it.o
+    0x08001f68   0x000001e0   Code   RO          208    .text               system_stm32f10x.o
+    0x08002148   0x000000d4   Code   RO          226    .text               delay.o
+    0x0800221c   0x00000110   Code   RO          243    .text               hal_uart.o
+    0x0800232c   0x000001a0   Code   RO          262    .text               hal_temp_hum.o
+    0x080024cc   0x00000088   Code   RO          277    .text               hal_infrared.o
+    0x08002554   0x000000ac   Code   RO          289    .text               sa_gpio.o
+    0x08002600   0x00000210   Code   RO          301    .text               hal_motor.o
+    0x08002810   0x00000128   Code   RO          313    .text               hal_rgb_led.o
+    0x08002938   0x00000100   Code   RO          325    .text               hal_key.o
+    0x08002a38   0x000000dc   Code   RO          337    .text               uart.o
+    0x08002b14   0x000000e4   Code   RO          353    .text               key_1.o
+    0x08002bf8   0x00000020   Code   RO          369    .text               infrared.o
+    0x08002c18   0x00000328   Code   RO          382    .text               buz_protocol.o
+    0x08002f40   0x000003f8   Code   RO          399    .text               gen_protocol.o
+    0x08003338   0x00000002   Code   RO          421    .text               c_w.l(use_no_semi_2.o)
+    0x0800333a   0x0000008a   Code   RO          423    .text               c_w.l(rt_memcpy_v6.o)
+    0x080033c4   0x00000044   Code   RO          425    .text               c_w.l(rt_memclr.o)
+    0x08003408   0x00000006   Code   RO          427    .text               c_w.l(heapauxi.o)
+    0x0800340e   0x00000002   Code   RO          431    .text               c_w.l(use_no_semi.o)
+    0x08003410   0x00000064   Code   RO          434    .text               c_w.l(rt_memcpy_w.o)
+    0x08003474   0x0000004e   Code   RO          436    .text               c_w.l(rt_memclr_w.o)
+    0x080034c2   0x0000004a   Code   RO          453    .text               c_w.l(sys_stackheap_outer.o)
+    0x0800350c   0x0000000c   Code   RO          455    .text               c_w.l(exit.o)
+    0x08003518   0x00000008   Code   RO          463    .text               c_w.l(libspace.o)
+    0x08003520   0x00000020   Data   RO          585    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000858, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000860, Max: 0x00005000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -949,15 +945,15 @@ Memory Map of the image
     0x20000030   0x00000007   Data   RW          339    .data               uart.o
     0x20000037   0x00000001   PAD
     0x20000038   0x00000002   Data   RW          354    .data               key_1.o
-    0x2000003a   0x0000000a   Data   RW          384    .data               buz_protocol.o
+    0x2000003a   0x00000008   Data   RW          384    .data               buz_protocol.o
+    0x20000042   0x00000002   PAD
     0x20000044   0x00000100   Zero   RW          338    .bss                uart.o
-    0x20000144   0x0000002a   Zero   RW          383    .bss                buz_protocol.o
-    0x2000016e   0x00000083   Zero   RW          400    .bss                gen_protocol.o
-    0x200001f1   0x00000003   PAD
-    0x200001f4   0x00000060   Zero   RW          464    .bss                c_w.l(libspace.o)
-    0x20000254   0x00000004   PAD
-    0x20000258   0x00000200   Zero   RW            2    HEAP                startup_stm32f10x_md.o
-    0x20000458   0x00000400   Zero   RW            1    STACK               startup_stm32f10x_md.o
+    0x20000144   0x00000038   Zero   RW          383    .bss                buz_protocol.o
+    0x2000017c   0x00000083   Zero   RW          400    .bss                gen_protocol.o
+    0x200001ff   0x00000001   PAD
+    0x20000200   0x00000060   Zero   RW          464    .bss                c_w.l(libspace.o)
+    0x20000260   0x00000200   Zero   RW            2    HEAP                startup_stm32f10x_md.o
+    0x20000460   0x00000400   Zero   RW            1    STACK               startup_stm32f10x_md.o
 
 
 ==============================================================================
@@ -967,7 +963,7 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       916         44          0         10         42       3555   buz_protocol.o
+       808         40          0          8         56       3254   buz_protocol.o
          0          0          0          0          0       4492   core_cm3.o
        212         18          0          4          0        911   delay.o
       1016        132          0          0        131      19341   gen_protocol.o
@@ -977,9 +973,9 @@ Image component sizes
        296          4          0          0          0       1920   hal_rgb_led.o
        416         12          0          0          0       2122   hal_temp_hum.o
        272         10          0          0          0       3085   hal_uart.o
-        12          0          0          0          0        464   infrared.o
-       120         10          0          2          0        653   key_1.o
-        70          0          0          0          0       3671   main.o
+        32          6          0          0          0        452   infrared.o
+       228         14          0          2          0        705   key_1.o
+        66          0          0          0          0       3691   main.o
        220         22          0          0          0       1661   misc.o
        172         30          0          0          0        995   sa_gpio.o
         64         26        236          0       1536        812   startup_stm32f10x_md.o
@@ -993,9 +989,9 @@ Image component sizes
        220         16          0          7        256       1392   uart.o
 
     ----------------------------------------------------------------------
-     12704        668        268         68       1968     347832   Object Totals
+     12720        674        268         68       1980     347591   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         4          0          0          1          3          0   (incl. Padding)
+         4          0          0          3          1          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1026,8 +1022,8 @@ Image component sizes
          2          0          0          0          0         68   use_no_semi_2.o
 
     ----------------------------------------------------------------------
-       644         12          0          0        100        872   Library Totals
-         4          0          0          0          4          0   (incl. Padding)
+       644         12          0          0         96        872   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1036,7 +1032,7 @@ Image component sizes
        640         12          0          0         96        872   c_w.l
 
     ----------------------------------------------------------------------
-       644         12          0          0        100        872   Library Totals
+       644         12          0          0         96        872   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -1045,15 +1041,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     13348        680        268         68       2068     346516   Grand Totals
-     13348        680        268         68       2068     346516   ELF Image Totals
-     13348        680        268         68          0          0   ROM Totals
+     13364        686        268         68       2076     346327   Grand Totals
+     13364        686        268         68       2076     346327   ELF Image Totals
+     13364        686        268         68          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                13616 (  13.30kB)
-    Total RW  Size (RW Data + ZI Data)              2136 (   2.09kB)
-    Total ROM Size (Code + RO Data + RW Data)      13684 (  13.36kB)
+    Total RO  Size (Code + RO Data)                13632 (  13.31kB)
+    Total RW  Size (RW Data + ZI Data)              2144 (   2.09kB)
+    Total ROM Size (Code + RO Data + RW Data)      13700 (  13.38kB)
 
 ==============================================================================
 

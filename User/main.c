@@ -34,12 +34,14 @@ int main(void)
     while(1)
     {
         // handle uart msg
-        HandleMsg();
+        //HandleMsg();
         
         // handle key events
         HandleKey();        
 
-        // business logic tick 
-        BuzTick();  
+        // send mcu status in interval
+        //CheckStatus();  
+
+        UpdateStatus();
     }
 }

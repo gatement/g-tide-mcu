@@ -3,6 +3,7 @@
 uint16_t key_return = NO_KEY;
 
 extern uint8_t  uart_msg_sn;
+extern uint8_t  g_val;
 
 /*******************************************************************************
  * Function Name  : HandleKey
@@ -14,8 +15,6 @@ extern uint8_t  uart_msg_sn;
  *******************************************************************************/
 void HandleKey(void)
 {
-    // disable reset
-    /*
     // long key1 pressure to reset module
     if(key_return & PRESS_KEY1)
     {
@@ -35,7 +34,6 @@ void HandleKey(void)
 
         key_return = 0;
     }
-    */
 
     // press key2 to config module
     if(key_return & PRESS_KEY2)
@@ -53,12 +51,13 @@ void HandleKey(void)
         key_return = 0;
     }
 
-    // press key4 to config module
-    if(key_return & PRESS_KEY4)
+    // press key3 to config module
+    if(key_return & PRESS_KEY3)
     {
         if (key_return & KEY_UP)
         {
-            IncreaseGValue();
+            g_val ++;
+            if(g_val > G_VAL_MAX) g_val = 0;
         }
 
         key_return = 0;
