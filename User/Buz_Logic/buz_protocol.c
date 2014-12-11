@@ -234,7 +234,7 @@ void UpdateTemperatureHumidity()
         {
             humidity = h;
         }
-        else if(h >= (humidity + 2))
+        else if(h >= (humidity + 3))
         {
             humidity = h;
             g_val += 10;
