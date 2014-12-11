@@ -230,7 +230,7 @@ void UpdateTemperatureHumidity()
         else if(t >= (temperature + 2))
         {
             temperature = t;
-            IncreaseGValue2(30);
+            IncreaseGValue2(150);
         }
 
         if(h < humidity)
@@ -240,7 +240,7 @@ void UpdateTemperatureHumidity()
         else if(h >= (humidity + 3))
         {
             humidity = h;
-            IncreaseGValue2(30);
+            IncreaseGValue2(150);
         }
     }
 }

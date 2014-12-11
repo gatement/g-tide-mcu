@@ -332,7 +332,7 @@ I (..\user\sys.h)(0x5489B198)
 I (..\User\Hal_Driver\GPIO\sa_gpio.h)(0x5489B198)
 I (..\User\Hal_Driver\hal_temp_hum.h)(0x5489B198)
 I (..\User\Hal_Driver\hal_infrared.h)(0x5489B198)
-F (..\User\Buz_Logic\buz_protocol.c)(0x5489C5C1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\Lib\inc -I..\Lib\cmsis -I..\user -I..\Lib -I..\User\Hal_Driver -I..\User\Buz_Logic -I..\User\Hal_Driver\GPIO-I C:\app\g-tide-mcu\MDK_Project\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\buz_protocol.o --omf_browse .\output\buz_protocol.crf --depend .\output\buz_protocol.d)
+F (..\User\Buz_Logic\buz_protocol.c)(0x5489C827)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\Lib\inc -I..\Lib\cmsis -I..\user -I..\Lib -I..\User\Hal_Driver -I..\User\Buz_Logic -I..\User\Hal_Driver\GPIO-I C:\app\g-tide-mcu\MDK_Project\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\output\buz_protocol.o --omf_browse .\output\buz_protocol.crf --depend .\output\buz_protocol.d)
 I (..\User\Buz_Logic\buz_protocol.h)(0x5489C260)
 I (..\user\delay.h)(0x5489B198)
 I (..\Lib\cmsis\stm32f10x.h)(0x5489B197)
