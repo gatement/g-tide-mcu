@@ -967,33 +967,33 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       916         44          0         10         42       3555   buz_protocol.o
+       916         44          0         10         42       3531   buz_protocol.o
          0          0          0          0          0       4492   core_cm3.o
-       212         18          0          4          0        911   delay.o
-      1016        132          0          0        131      19341   gen_protocol.o
-       136          4          0          0          0        796   hal_infrared.o
-       256          8          0          0          0        990   hal_key.o
-       528         36          0          0          0       2160   hal_motor.o
-       296          4          0          0          0       1920   hal_rgb_led.o
-       416         12          0          0          0       2122   hal_temp_hum.o
-       272         10          0          0          0       3085   hal_uart.o
-        12          0          0          0          0        464   infrared.o
-       120         10          0          2          0        653   key_1.o
-        70          0          0          0          0       3671   main.o
-       220         22          0          0          0       1661   misc.o
-       172         30          0          0          0        995   sa_gpio.o
-        64         26        236          0       1536        812   startup_stm32f10x_md.o
-       284         10          0          0          0       2091   stm32f10x_exti.o
-       860         38          0          0          0     254189   stm32f10x_gpio.o
-       576         64          0          4          0       2013   stm32f10x_it.o
-       932         36          0         20          0       8624   stm32f10x_rcc.o
-      3610         88          0          0          0      21988   stm32f10x_tim.o
-      1032         22          0          0          0       8232   stm32f10x_usart.o
-       480         38          0         20          0       1675   system_stm32f10x.o
-       220         16          0          7        256       1392   uart.o
+       212         18          0          4          0        899   delay.o
+      1016        132          0          0        131      19317   gen_protocol.o
+       136          4          0          0          0        788   hal_infrared.o
+       256          8          0          0          0        982   hal_key.o
+       528         36          0          0          0       2144   hal_motor.o
+       296          4          0          0          0       1912   hal_rgb_led.o
+       416         12          0          0          0       2110   hal_temp_hum.o
+       272         10          0          0          0       3069   hal_uart.o
+        12          0          0          0          0        456   infrared.o
+       120         10          0          2          0        641   key_1.o
+        70          0          0          0          0       3651   main.o
+       220         22          0          0          0       1645   misc.o
+       172         30          0          0          0        979   sa_gpio.o
+        64         26        236          0       1536        808   startup_stm32f10x_md.o
+       284         10          0          0          0       2079   stm32f10x_exti.o
+       860         38          0          0          0     254121   stm32f10x_gpio.o
+       576         64          0          4          0       2009   stm32f10x_it.o
+       932         36          0         20          0       8608   stm32f10x_rcc.o
+      3610         88          0          0          0      21976   stm32f10x_tim.o
+      1032         22          0          0          0       8216   stm32f10x_usart.o
+       480         38          0         20          0       1651   system_stm32f10x.o
+       220         16          0          7        256       1368   uart.o
 
     ----------------------------------------------------------------------
-     12704        668        268         68       1968     347832   Object Totals
+     12704        668        268         68       1968     347452   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          4          0          0          1          3          0   (incl. Padding)
 
@@ -1045,8 +1045,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     13348        680        268         68       2068     346516   Grand Totals
-     13348        680        268         68       2068     346516   ELF Image Totals
+     13348        680        268         68       2068     346136   Grand Totals
+     13348        680        268         68       2068     346136   ELF Image Totals
      13348        680        268         68          0          0   ROM Totals
 
 ==============================================================================

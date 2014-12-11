@@ -11,7 +11,7 @@ user info
 username=gg
 password=go4ggg
 uid=7035193c40f1433b9247061f2d7d267e
-token=475f7d289a264ad982ea92691e535b61
+token=273df64357134575844ca426dabc7b00
 p0_type=attrs_v4
 
 device info
