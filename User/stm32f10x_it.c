@@ -45,6 +45,7 @@ extern uint16_t   report_status_idle_time;
 
 // buz_prototol
 extern uint16_t    timer;
+extern uint16_t    t_h_timer;
 
 /** @addtogroup Template_Project
  * @{
@@ -235,6 +236,7 @@ void TIM3_IRQHandler(void)
         check_status_time ++;
         report_status_idle_time ++;
         timer ++;
+        t_h_timer ++;
 
         key_press = Get_Key();  
         switch(key_state)

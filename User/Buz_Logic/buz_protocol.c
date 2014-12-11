@@ -11,6 +11,9 @@ uint16_t                           report_status_idle_time;
 
 uint8_t                            g_val;
 uint16_t                           timer;
+uint16_t                           t_h_timer;
+uint8_t                            temperature;
+uint8_t                            humidity;
 
 extern uint8_t                     uart_msg_sn;
 
@@ -18,6 +21,9 @@ void BuzProtocolInit()
 {
     g_val = 0;
     timer = 0;
+    t_h_timer = 0;
+    temperature = 255;
+    humidity = 255;
 
     // m_protocol_write_ack
     memset(&m_protocol_write_ack, 0, sizeof(protocol_write_ack_t));
@@ -200,5 +206,41 @@ void UpdateStatus()
     {
         Motor_Control(g_val*2, 0);
         LED_RGB_Control(0, g_val*5, 0);
+    }
+}
+
+void UpdateTemperatureHumidity()
+{
+    uint8_t t,h;
+
+    if(t_h_timer > 150)
+    {
+        t_h_timer = 0;
+
+        DHT11_Read_Data(&t, &h); //Read DHT11 Value
+
+        if(t < temperature)
+        {
+            temperature = t;
+        }
+        else if(t >= (temperature + 2))
+        {
+            temperature = t;
+            g_val += 10;
+            if(g_val > G_VAL_MAX) g_val = 0;
+        }
+
+        if(h < humidity)
+        {
+            humidity = h;
+        }
+        else if(h >= (humidity + 2))
+        {
+            humidity = h;
+            g_val += 10;
+            if(g_val > G_VAL_MAX) g_val = 0;
+        }
+
+        printf("g: %d, t: %d, h: %d\r\n", g_val, t, h);
     }
 }

@@ -42,6 +42,7 @@ int main(void)
         // send mcu status in interval
         //CheckStatus();  
 
+        UpdateTemperatureHumidity();
         UpdateStatus();
     }
 }

@@ -476,10 +476,10 @@ ARM Macro Assembler    Page 8
               00000200 
               00000000 
 Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\output
-\startup_stm32f10x_md.d -o.\output\startup_stm32f10x_md.o -IC:\app\gokit_sandbo
-x\MDK_Project\RTE -IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include
- -IC:\Keil_v5\ARM\CMSIS\Include --predefine="STM32F10X_MD SETA 1" --list=.\star
-tup_stm32f10x_md.lst ..\Lib\startup\arm\startup_stm32f10x_md.s
+\startup_stm32f10x_md.d -o.\output\startup_stm32f10x_md.o -IC:\app\g-tide-mcu\M
+DK_Project\RTE -IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include -I
+C:\Keil_v5\ARM\CMSIS\Include --predefine="STM32F10X_MD SETA 1" --list=.\startup
+_stm32f10x_md.lst ..\Lib\startup\arm\startup_stm32f10x_md.s
 
 
 

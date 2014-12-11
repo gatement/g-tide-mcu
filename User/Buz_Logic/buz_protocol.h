@@ -62,5 +62,6 @@ void HandleBuzCmd(protocol_header_t protocol_header, uint8_t *buf);
 void BuzProtocolInit(void);
 void CheckStatus(void);
 void UpdateStatus(void);
+void UpdateTemperatureHumidity(void);
 
 #endif /*_BUZ_PROTOCOL_H*/
