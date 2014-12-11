@@ -1,0 +1,45 @@
+wifi send
+-------------------
+get_mcu_info_w2m:    ffff 0005 01 01 0000 07
+w2m:                 ffff 0006 03 01 0000 01 0b
+ping_w2m:            ffff 0005 07 01 0000 0d
+wifi_status_w2m:     ffff 0007 0d 01 0000 0001 16
+reboot_2m:           ffff 0005 0f 01 0000 15
+
+user info
+-------------------
+username=gg
+password=go4ggg
+uid=7035193c40f1433b9247061f2d7d267e
+token=475f7d289a264ad982ea92691e535b61
+p0_type=attrs_v4
+
+device info
+-------------------
+mac1=C89346463BBB
+did1=ZvxAYGhhtg3Q3JtUigokjK
+passcode1=GXDBDDJJQL
+
+mac2=C8934646441F
+did2=FARBuG8potLbidPpupndUE
+passcode2=SXOHOIPVIO
+
+mac3=C89346469F2A
+did3=jT5suR6Fbr4YQzj6MV3CqA
+passcode3=ODTWMNBSSR
+
+product info
+-------------------
+appid=2415895d7c89453da8e05051301b5572
+product_key=c3896f0ac0504db6acea135477efb7db
+
+web socket test
+-------------------
+link=http://m2m.gizwits.com:8080/app
+data={"cmd": "c2s_write","data":{"did": "jT5suR6Fbr4YQzj6MV3CqA","attrs": {"gvalue": 10}}}
+
+debug links
+-------------------
+json=http://site.gizwits.com/v2/datapoint?product_key=c3896f0ac0504db6acea135477efb7db&format=json
+is_online=http://site.gizwits.com/developer/debug/online/jT5suR6Fbr4YQzj6MV3CqA
+raw_data=http://site.gizwits.com/developer/debug/gizwits_raw?did=jT5suR6Fbr4YQzj6MV3CqA
