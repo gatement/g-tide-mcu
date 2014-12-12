@@ -7,13 +7,10 @@ protocol_mcu_status_t              m_protocol_mcu_status;
 
 uint16_t                           report_status_idle_time;
 uint16_t                           decrease_value_time;
-uint16_t                           t_h_time;
 uint8_t                            gvalue_honey; // I push up honey's value and send to her/him
 uint8_t                            gvalue_honey_last;
 uint8_t                            gvalue_my;    // Honey push up my value and send it to me
 uint8_t                            high;         // If reach high or not
-uint8_t                            temperature;
-uint8_t                            humidity;
 
 extern uint8_t                     uart_msg_sn;
 
@@ -23,12 +20,9 @@ void BuzProtocolInit()
     gvalue_honey_last = 255; // make it differ with gvalue_honey
     gvalue_my = 0;
     high = 0;
-    temperature = 255;
-    humidity = 255;
 
     report_status_idle_time = 0;
     decrease_value_time = 0;
-    t_h_time = 0;
 
     // m_protocol_write_ack
     memset(&m_protocol_write_ack, 0, sizeof(protocol_write_ack_t));
@@ -171,17 +165,12 @@ void Display()
     }
 }
 
-void IncreaseGValue2(uint8_t step)
+void IncreaseGValue(uint8_t step)
 {
-    if(gvalue_honey < G_VAL_MAX - step) 
+    if(gvalue_honey + step < G_VAL_MAX) 
         gvalue_honey += step;
     else
         gvalue_honey = G_VAL_MAX - 1;
-}
-
-void IncreaseGValue()
-{
-    IncreaseGValue2(1);
 }
 
 void DecreaseGValue()
@@ -213,41 +202,8 @@ void DecreaseGValue()
     }
 }
 
-void UpdateTemperatureHumidity()
-{
-    uint8_t t,h;
-
-    if(t_h_time > 150)
-    {
-        t_h_time = 0;
-
-        DHT11_Read_Data(&t, &h); //Read DHT11 Value
-
-        if(t < temperature)
-        {
-            temperature = t;
-        }
-        else if(t >= (temperature + 2))
-        {
-            temperature = t;
-            IncreaseGValue2(150);
-        }
-
-        if(h < humidity)
-        {
-            humidity = h;
-        }
-        else if(h >= (humidity + 3))
-        {
-            humidity = h;
-            IncreaseGValue2(150);
-        }
-    }
-}
-
 void BuzTick()
 {
-    UpdateTemperatureHumidity();
     UploadStatus();
     Display();
     DecreaseGValue();

@@ -7,7 +7,7 @@ void HandleIREvent(uint8_t state)
     if(state)
     {
         //printf("infrared event: %i\r\n", 1);
-        IncreaseGValue();
+        IncreaseGValue(1);
     }
     else
     {       

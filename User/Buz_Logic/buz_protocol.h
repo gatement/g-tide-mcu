@@ -59,6 +59,6 @@ void HandleModuleStatus(uint16_t status);
 void HandleBuzCmd(protocol_header_t protocol_header, uint8_t *buf);
 void BuzProtocolInit(void);
 void BuzTick(void);
-void IncreaseGValue(void);
+void IncreaseGValue(uint8_t step);
 
 #endif /*_BUZ_PROTOCOL_H*/

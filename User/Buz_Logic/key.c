@@ -58,7 +58,7 @@ void HandleKey(void)
     {
         if (key_return & KEY_UP)
         {
-            IncreaseGValue();
+            IncreaseGValue(1);
         }
 
         key_return = 0;
