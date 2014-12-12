@@ -53,8 +53,8 @@ void HandleKey(void)
         key_return = 0;
     }
 
-    // press key4 to config module
-    if(key_return & PRESS_KEY4)
+    // press key3 to increase g-value
+    if(key_return & PRESS_KEY3)
     {
         if (key_return & KEY_UP)
         {
