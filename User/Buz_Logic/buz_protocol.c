@@ -126,7 +126,7 @@ void High(uint16_t run_time, uint16_t stop_time)
 
 void UploadStatus()
 {
-    // send honey's value every 2 seconds 
+    // send honey's value every 1.5 seconds when value changed
     if(high == 0 && report_status_idle_time > 150 && gvalue_honey != gvalue_honey_last)
     {
         ReportStatus(REPORT_STATUS, 0);
